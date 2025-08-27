@@ -1,0 +1,27 @@
+---
+const { title, description, image } = Astro.props;
+---
+
+<div
+  class="relative w-full h-[509px] rounded-[24px] bg-[#ebebeb] overflow-hidden"
+>
+  <img
+    src={image}
+    alt={`${title} preview`}
+    class="w-full h-full object-contain"
+  />
+</div>
+<header
+  class="inline-flex flex-col min-w-[1280px] items-start justify-center gap-[0px] relative flex-[0_0_auto]"
+>
+  <p
+    class="relative w-fit font-sans font-medium text-[#666666] text-lg tracking-[0] leading-[25.2px] whitespace-nowrap"
+  >
+    {title}
+  </p>
+  <h1
+    class="relative w-fit mt-[-1.00px] font-sans font-medium text-black text-2xl tracking-[0] leading-[33px] whitespace-nowrap"
+  >
+    {description}
+  </h1>
+</header>

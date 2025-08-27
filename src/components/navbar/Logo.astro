@@ -1,0 +1,19 @@
+---
+import logoDesktop from "../../assets/navbar/logo-desktop.svg";
+import logoTablet from "../../assets/navbar/logo-tablet.svg";
+import logoMobile from "../../assets/navbar/logo-mobile.svg";
+---
+
+<picture>
+  <source
+    srcset={logoDesktop.src}
+    media="(min-width: 1024px)"
+    type="image/svg+xml"
+  />
+  <source
+    srcset={logoTablet.src}
+    media="(min-width: 768px)"
+    type="image/svg+xml"
+  />
+  <img src={logoMobile.src} alt="logo" />
+</picture>

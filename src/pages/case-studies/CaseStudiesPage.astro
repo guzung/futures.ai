@@ -1,0 +1,22 @@
+---
+import SingleProject from "./components/SingleProject.astro";
+import GridProjects from "./components/GridProjects.astro";
+import firstProject from "../../assets/case-studies/first-project.svg";
+import lastProject from "../../assets/case-studies/last-project.svg";
+---
+
+<section
+  class="flex flex-col items-center justify-center gap-[0px] px-20 py-24 relative bg-white"
+>
+  <SingleProject
+    title="Banking App"
+    description="UI Concept Cubekit Banking"
+    image={firstProject.src}
+  />
+  <GridProjects />
+  <SingleProject
+    title="Philippines Web"
+    description="Philippines Website"
+    image={lastProject.src}
+  />
+</section>

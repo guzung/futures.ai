@@ -1,0 +1,22 @@
+---
+import menuMobile from "../../assets/navbar/menu-mobile.svg";
+import Logo from "./Logo.astro";
+---
+
+<div
+  class="inline md:hidden inline-flex items-center gap-[264px] p-1 relative flex-[0_0_auto] bg-[#ffffff1a] rounded-xl border border-solid border-[#0000000f]"
+>
+  <Logo />
+  <button
+    class="inline-flex flex-col items-start relative flex-[0_0_auto] bg-[#13151a] rounded-lg overflow-hidden border border-solid border-[#26282c] cursor-pointer"
+    aria-label="Toggle menu"
+    type="button"
+  >
+    <img
+      class="w-full h-full"
+      alt=""
+      src={menuMobile.src}
+      role="presentation"
+    />
+  </button>
+</div>

@@ -1,0 +1,96 @@
+---
+import LogoBig from "../navbar/LogoBig.astro";
+
+const {
+  image,
+  skillTags = [
+    "AI business solutions",
+    "Coding",
+    "SMM",
+    "Development",
+    "Product design",
+  ],
+} = Astro.props;
+---
+
+<header
+  class="flex flex-col items-center gap-3 self-stretch w-full relative p-[32px] bg-white"
+>
+  <div
+    class="inline-flex flex-wrap items-center justify-center gap-[8px_11px] relative flex-[0_0_auto]"
+    role="navigation"
+    aria-label="Skills navigation"
+  >
+    {
+      skillTags.map((skill) => (
+        <div class="inline-flex h-[30px] items-center gap-2 p-1.5 bg-white rounded-lg border border-solid border-[#efeff0] relative flex-[0_0_auto]">
+          <span class="relative w-fit mt-[-1.50px] font-sans font-semibold text-zinc-500 text-sm tracking-[0] leading-[normal]">
+            {skill}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+
+  <LogoBig />
+  <header
+    class="inline-flex items-center gap-[6.99px] relative flex-[0_0_auto]"
+  >
+    <div
+      class="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]"
+    >
+      <div
+        class="flex flex-col items-start pt-0 pb-[0.6px] px-0 relative self-stretch w-full flex-[0_0_auto]"
+      >
+        <h2
+          class="relative self-stretch mt-[-1.00px] font-sans font-semibold text-transparent text-[52px] text-center tracking-[0] leading-[normal]"
+        >
+          <span class="text-black">Transforming Ideas Into </span><br />
+          <span class="text-[#b1b1b2]">Launched Designs</span>
+        </h2>
+      </div>
+    </div>
+  </header>
+
+  <section
+    class="flex flex-col w-[772px] items-center gap-14 relative flex-[0_0_auto]"
+  >
+    <p
+      class="relative self-stretch mt-[-1.00px] [font-family:'Manrope-Medium',Helvetica] font-medium text-[#606167] text-lg tracking-[0] leading-[normal]"
+    >
+      Helping early-stage startups/ bold business convert cold traffic through
+      smart UI redesigns.
+    </p>
+
+    <div
+      class="inline-flex items-start gap-2.5 relative flex-[0_0_auto]"
+      role="group"
+      aria-label="Call to action buttons"
+    >
+      <button
+        class="inline-flex items-center gap-2.5 px-5 py-4 relative self-stretch flex-[0_0_auto] rounded-xl bg-[linear-gradient(180deg,rgba(54,145,255,1)_0%,rgba(3,30,229,1)_100%)] hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-opacity"
+        type="button"
+        aria-label="Get in touch with us"
+      >
+        <div class="relative w-2 h-2 bg-white rounded" aria-hidden="true"></div>
+        <span
+          class="relative w-fit mt-[-0.50px] font-sans font-semibold text-white text-base tracking-[0.04px] leading-[16.7px] whitespace-nowrap"
+        >
+          Get in Touch
+        </span>
+      </button>
+
+      <button
+        class="inline-flex items-center gap-2.5 px-[22px] py-3.5 relative flex-[0_0_auto] bg-white rounded-xl border border-solid border-[#ececed] shadow-[0px_2px_4px_#0000000d] hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors"
+        type="button"
+        aria-label="View our work portfolio"
+      >
+        <span
+          class="relative w-fit mt-[-1.00px] font-sans font-semibold text-[#14161b] text-base tracking-[0] leading-[normal]"
+        >
+          View Work
+        </span>
+      </button>
+    </div>
+  </section>
+</header>

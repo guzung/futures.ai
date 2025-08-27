@@ -1,0 +1,78 @@
+---
+import project1 from "../../../assets/case-studies/project-1.svg";
+import project2 from "../../../assets/case-studies/project-2.svg";
+import project3 from "../../../assets/case-studies/project-3.svg";
+import project4 from "../../../assets/case-studies/project-4.svg";
+import project5 from "../../../assets/case-studies/project-5.svg";
+import project6 from "../../../assets/case-studies/project-6.svg";
+import project7 from "../../../assets/case-studies/project-7.svg";
+import project8 from "../../../assets/case-studies/project-8.svg";
+import ProjectItem from "../../../components/ProjectItem.astro";
+
+const portfolioItems = [
+  {
+    id: 1,
+    image: project1.src,
+    category: "Zippy AI",
+    title: "Zippy AI website",
+  },
+  {
+    id: 2,
+    image: project2.src,
+    category: "CRM Logo Concept",
+    title: "Perioly CRM",
+  },
+  {
+    id: 3,
+    image: project3.src,
+    category: "Vexperio tourist",
+    title: "Vexperio",
+  },
+  {
+    id: 4,
+    image: project4.src,
+    category: "Web3 Dash",
+    title: "Web3 dashboard",
+  },
+  {
+    id: 5,
+    image: project5.src,
+    category: "Philippines web",
+    title: "Philippines Website",
+  },
+  {
+    id: 6,
+    image: project6.src,
+    category: "Analytics website",
+    title: "Site analytics",
+  },
+  {
+    id: 7,
+    image: project7.src,
+    category: "Berlin web",
+    title: "Berlin Turist Website",
+  },
+  {
+    id: 8,
+    image: project8.src,
+    category: "VPN Landing",
+    title: "Eclipse VPN Landing",
+  },
+];
+---
+
+<main
+  class="flex flex-wrap w-full items-center justify-center gap-[40px_40px] relative"
+>
+  {
+    portfolioItems.map((item) => (
+      <article class="flex flex-col w-[620px] items-start gap-[23px] relative">
+        <ProjectItem
+          title={item.category}
+          description={item.title}
+          image={item.image}
+        />
+      </article>
+    ))
+  }
+</main>
