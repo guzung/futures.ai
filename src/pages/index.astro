@@ -2,11 +2,13 @@
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import NavBar from "../components/navbar/NavBar.astro";
+import Hero from "../components/hero/Hero.astro";
 
 import "../styles/global.css";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import Hero from "../components/hero/Hero.astro";
 import CaseStudiesPage from "./case-studies/CaseStudiesPage.astro";
+import AboutUsPage from "./about-us/AboutUsPage.astro";
+import OurTechnologiesPage from "./our-technologies/OurTechnologiesPage.astro";
 ---
 
 <!doctype html>
@@ -18,6 +20,8 @@ import CaseStudiesPage from "./case-studies/CaseStudiesPage.astro";
     <NavBar />
     <Hero />
     <CaseStudiesPage />
+    <AboutUsPage />
+    <OurTechnologiesPage />
     <div class="block md:hidden">Mobile layout</div>
     <div class="hidden md:block lg:hidden">Tablet layout</div>
     <div class="hidden lg:block">Desktop layout</div>

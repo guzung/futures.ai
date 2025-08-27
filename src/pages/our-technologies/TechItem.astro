@@ -1,0 +1,31 @@
+---
+const { title, description, image } = Astro.props;
+---
+
+<section
+  class="inline-flex flex-col items-start gap-5 pt-[314px] pb-[26px] w-[414px] h-[515px] px-12 relative bg-[#eff1f4] rounded-[50px] overflow-hidden"
+>
+  <header
+    class="inline-flex items-center justify-center relative flex-[0_0_auto]"
+  >
+    <h1
+      class="relative w-fit mt-[-1.00px] font-sans font-semibold text-[#021940] text-[32.8px] tracking-[0] leading-[normal]"
+    >
+      {title}
+    </h1>
+  </header>
+  <div
+    class="flex self-stretch w-full items-center justify-center relative flex-[0_0_auto]"
+  >
+    <p
+      class="relative w-[318px] mt-[-1.00px] font-sans font-medium text-[#405370] text-base tracking-[0] leading-[normal]"
+    >
+      {description}
+    </p>
+  </div>
+  <img
+    class="absolute w-72 h-auto top-0 left-[130px] aspect-[0.99]"
+    alt="technology"
+    src={image}
+  />
+</section>

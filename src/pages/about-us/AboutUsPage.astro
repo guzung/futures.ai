@@ -1,0 +1,51 @@
+---
+import aboutUsImage from "../../assets/aboutUsImage.svg";
+
+const mainText = {
+  primary:
+    "For over a decade, we've crafted digital solutions with clarity and precision. From websites and apps",
+  secondary:
+    "to AI tools and strategies, our team delivers results at scale. With 60+ projects launched globally, we blend purpose-driven design with smart execution to help businesses grow.",
+  callToAction: "Let's build what's next.",
+};
+---
+
+<section
+  class="flex flex-col items-center justify-center gap-2.5 px-[34px] py-24 relative bg-white w-fit mx-auto"
+>
+  <div
+    class="flex items-center gap-[27px] px-[22px] py-6 self-stretch w-full bg-[#f2f8ff] rounded-[32px] relative flex-[0_0_auto]"
+  >
+    <div
+      class="inline-flex flex-col items-start gap-8 rounded-[32px] relative flex-[0_0_auto]"
+    >
+      <p
+        class="relative w-[661px] mt-[-1.00px] font-sans font-medium text-transparent text-[38px] tracking-[0] leading-[38px]"
+      >
+        <span class="text-black"> {mainText.primary} </span>
+        <br />
+        <br />
+        <br />
+        <span class="text-[#b1b1b2]">
+          {mainText.secondary}
+        </span>
+      </p>
+
+      <div
+        class="inline-flex items-center justify-center relative flex-[0_0_auto]"
+      >
+        <h2
+          class="relative w-fit mt-[-1.00px] bg-[linear-gradient(267deg,rgba(54,145,255,1)_0%,rgba(3,30,229,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Manrope-Medium',Helvetica] font-medium text-transparent text-[38px] tracking-[0] leading-[47.9px] whitespace-nowrap"
+        >
+          {mainText.callToAction}
+        </h2>
+      </div>
+    </div>
+
+    <img
+      class="relative w-[640px] h-[638px] aspect-[1] object-cover"
+      alt="Digital security and technology visualization showing a glowing lock icon surrounded by circuit patterns and binary code"
+      src={aboutUsImage.src}
+    />
+  </div>
+</section>
