@@ -1,0 +1,47 @@
+---
+import WhyUsImage from "../../assets/why-us.svg";
+
+const contentData = {
+  mainText:
+    "We blend smart UI/UX design, powerful development, strategic SMM, and cutting-edge AI integration to deliver tailored digital solutions.",
+  highlightText: "Clients choose us",
+  continuationText:
+    "for our clarity, speed, and results-driven mindset that transforms ideas into scalable, high-performing products across industries.",
+};
+---
+
+<section
+  class="flex items-center justify-center gap-[30px] px-[30px] py-24 relative bg-white"
+  role="main"
+  aria-labelledby="why-us-heading"
+>
+  <div
+    class="justify-center px-4 py-[22px] bg-[#f1f7ff] rounded-[31px] inline-flex items-center relative flex-[0_0_auto]"
+  >
+    <div
+      class="h-[486px] gap-2.5 px-[180px] py-[216px] inline-flex items-center relative flex-[0_0_auto]"
+    >
+      <p
+        class="absolute w-[661px] h-[486px] -top-px left-0 font-sans font-medium text-black text-[38px] tracking-[0] leading-[54px]"
+      >
+        {contentData.mainText}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+          " "
+        }
+        {contentData.continuationText}
+      </p>
+      <h2
+        id="why-us-heading"
+        class="relative w-fit mt-[6px] bg-[linear-gradient(270deg,rgba(54,145,255,1)_0%,rgba(3,30,229,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] font-sans font-medium text-transparent text-[38px] tracking-[0] leading-[54px] whitespace-nowrap"
+      >
+        {contentData.highlightText}
+      </h2>
+    </div>
+  </div>
+  <img
+    class="relative w-[640px] h-[638px] aspect-[1] object-cover"
+    alt="Professional team members showcasing our collaborative approach and expertise"
+    src={WhyUsImage.src}
+    loading="lazy"
+  />
+</section>
