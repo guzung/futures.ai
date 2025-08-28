@@ -1,0 +1,57 @@
+---
+import j1 from "../../assets/jurisdictions/jurisdiction-1.svg";
+import j2 from "../../assets/jurisdictions/jurisdiction-2.svg";
+import j3 from "../../assets/jurisdictions/jurisdiction-3.svg";
+import flags from "../../assets/jurisdictions/flags.svg";
+
+const jurisdictionImages = [
+  {
+    src: j1.src,
+    alt: "EU jurisdiction representation",
+  },
+  {
+    src: j2.src,
+    alt: "Asia-Pacific jurisdiction representation",
+  },
+  {
+    src: j3.src,
+    alt: "USA jurisdiction representation",
+  },
+];
+---
+
+<section
+  class="flex flex-col items-center justify-center gap-2.5 px-[34px] py-24 relative bg-white w-fit mx-auto"
+>
+  <div
+    class="flex flex-col items-center gap-[90px] px-[339px] py-24 relative self-stretch w-full flex-[0_0_auto] bg-[#eff1f4] rounded-[25px]"
+  >
+    <h2
+      class="relative self-stretch font-sans font-medium text-transparent text-[40px] tracking-[0] leading-[56px]"
+    >
+      <span class="text-black">
+        We work in leading jurisdictions <br />
+      </span>
+      <span class="inline-flex items-center gap-2">
+        <span class="text-[#666666]">EU, USA, Asia-Pacific region</span>
+        <img
+          class="h-[1em] w-auto align-middle"
+          alt="Flags: EU, USA, Asia-Pacific"
+          src={flags.src}
+        />
+      </span>
+    </h2>
+
+    <div
+      class="relative inline-flex items-center"
+      role="img"
+      aria-label="Jurisdiction representations"
+    >
+      {
+        jurisdictionImages.map((image) => (
+          <img alt={image.alt} src={image.src} />
+        ))
+      }
+    </div>
+  </div>
+</section>
