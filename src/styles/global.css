@@ -7,6 +7,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --accent: #2337ff;
   --accent-dark: #000d8a;

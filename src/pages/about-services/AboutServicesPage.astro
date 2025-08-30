@@ -1,0 +1,91 @@
+---
+const servicesData = [
+  {
+    title: "Brand Design",
+    description:
+      "Crafting powerful brand identities that tell your story, connect with your audience, and stand out in digital spaces—design that's not just seen but remembered.",
+  },
+  {
+    title: "Frontend Development",
+    description:
+      "We build sleek, high-performance interfaces that look great and work flawlessly—turning your vision into responsive, pixel-perfect web experiences.",
+  },
+  {
+    title: "Backend Development",
+    description:
+      "Scalable, secure, and solid—our backend solutions power your platforms with performance-driven architecture and future-ready code.",
+  },
+  {
+    title: "App Development",
+    description:
+      "From idea to launch, we build cross-platform apps that delight users and deliver business value—seamlessly blending tech and creativity.",
+  },
+  {
+    title: "Mobile App Development",
+    description:
+      "Whether iOS or Android, we create native and hybrid mobile apps designed for speed, usability, and real-world impact.",
+  },
+  {
+    title: "IT Security",
+    description:
+      "Guard your digital assets with enterprise-grade cybersecurity solutions—proactive protection tailored to evolving threats.",
+  },
+  {
+    title: "UI/UX Design",
+    description:
+      "We design intuitive, user interfaces that enhance engagement and deliver seamless experiences across every device.",
+  },
+  {
+    title: "Big Data Analytics",
+    description:
+      "Turn data into decisions—our analytics services unlock insights, helping you predict trends, optimize operations.",
+  },
+  {
+    title: "SEO (Search Engine Optimization)",
+    description:
+      "Rank higher, reach further—our SEO strategies boost your visibility with targeted.",
+  },
+  {
+    title: "AI Consulting",
+    description:
+      "Navigate the AI revolution with expert guidance—from strategy to implementation, we help you harness AI's full potential with clarity and confidence.",
+  },
+  {
+    title: "AI Optimization",
+    description:
+      "We integrate AI to streamline processes, personalize experiences, and automate intelligently—amplifying efficiency at every level.",
+  },
+  {
+    title: "Product Development",
+    description:
+      "We turn ideas into market-ready digital products—through rapid prototyping, agile development, and a focus on delivering real user value.",
+  },
+];
+---
+
+<section
+  id="about-services"
+  class="flex flex-col items-center justify-center relative bg-white w-full"
+>
+  <div
+    class="flex-wrap w-full mx-auto py-[96px] gap-[6px_6px] self-stretch bg-[#f1f1f1] flex justify-center items-center relative"
+  >
+    {
+      servicesData.map((service) => (
+        <article
+          class="flex-col max-w-sm w-[384px] h-[199px] gap-[22px] pt-10 pb-12 px-6 bg-white rounded-[14px] overflow-hidden flex items-start relative"
+          role="article"
+        >
+          <div class="flex-col gap-[18px] self-stretch w-full flex items-center relative">
+            <h3 class="relative self-stretch mt-[-1.00px] font-sans font-semibold text-black text-base tracking-[0] leading-[normal]">
+              {service.title}
+            </h3>
+            <p class="relative self-stretch font-sans font-semibold text-[#8a8a8a] text-base tracking-[0] leading-[normal]">
+              {service.description}
+            </p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

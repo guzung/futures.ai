@@ -1,0 +1,42 @@
+---
+const { title, image, technologies } = Astro.props;
+---
+
+<section
+  class="inline-flex flex-col items-start w-[1320px] gap-8 pt-0 pb-3 px-0 relative border-b [border-bottom-style:solid] border-[#d9d9d9]"
+>
+  <h1
+    class="relative w-fit mt-[-1.00px] font-sans font-medium text-white text-[40px] tracking-[0] leading-[56px] whitespace-nowrap"
+  >
+    {title}
+  </h1>
+  <div class="inline-flex flex-col items-start gap-8 relative flex-[0_0_auto]">
+    <figure
+      class="inline-flex flex-col items-start gap-2.5 relative flex-[0_0_auto]"
+    >
+      <img class="relative w-[1320px] object-cover" src={image} />
+    </figure>
+    <div
+      class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]"
+    >
+      <div
+        class="flex flex-wrap items-start gap-[7px_4px] self-stretch w-full relative flex-[0_0_auto]"
+        role="list"
+        aria-label="Development technologies"
+      >
+        {
+          technologies.map((tech, index) => (
+            <div
+              class="inline-flex items-center justify-center gap-2.5 px-2 py-1.5 relative flex-[0_0_auto] rounded-[999px] border border-solid border-[#ffffff69]"
+              role="listitem"
+            >
+              <span class="relative w-fit mt-[-1.00px] [font-family:'Manrope-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-[22.0px] whitespace-nowrap">
+                {tech}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>;

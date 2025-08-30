@@ -1,0 +1,100 @@
+---
+import service1 from "../../assets/services/service-1.svg";
+import service2 from "../../assets/services/service-2.svg";
+import service3 from "../../assets/services/service-3.svg";
+import service4 from "../../assets/services/service-4.svg";
+import Service from "./Service.astro";
+
+const sections = [
+  {
+    title: "Development",
+    image: service1.src,
+    technologies: [
+      "Webflow",
+      "Framer",
+      "C#",
+      "Laravel",
+      "MongoDB",
+      "JavaScript",
+      "C++",
+      "Node.Js",
+      "Angular",
+      "VueJS",
+      "React.Js",
+    ],
+  },
+  {
+    title: "UI/UX & Graphic Design",
+    image: service2.src,
+    technologies: [
+      "Figma",
+      "Illustrator",
+      "Photoshop",
+      "Adobe XD",
+      "Stark",
+      "Zeplin",
+      "Sketch",
+    ],
+  },
+  {
+    title: "Digital Marketing",
+    image: service3.src,
+    technologies: [
+      "Notion",
+      "Buffer",
+      "Tableau",
+      "Power BI",
+      "Llamalndex",
+      "Looker Studio",
+      "SEMRush",
+      "Google Gemini APl",
+      "Adobe Express",
+      "Meta Business Suite",
+      "Ahrefs",
+      "Google Cloud Vortex AI",
+      "MailChimp",
+      "Google Marketing Platform",
+      "Google Ads",
+      "LinkedIn Campaign Manager",
+      "Azure AI",
+      "Tag Manager/Google Analytics",
+    ],
+  },
+  {
+    title: "AI Integration & Consulting",
+    image: service4.src,
+    technologies: [
+      "OpenAI",
+      "Mistral",
+      "Zapier",
+      "Anthropic Claude",
+      "Llamalndex",
+      "AWS Sage Maker",
+      "Google Gemeni API",
+      "Azure AI",
+      "Google Cloud Vortex AI",
+    ],
+  },
+];
+---
+
+<section
+  id="services"
+  class="flex flex-col w-full justify-center items-center gap-8 px-[60px] py-[96px] relative bg-black"
+>
+  <h1
+    class="relative w-[1320px] mt-[-1.00px] font-sans font-medium text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap"
+  >
+    Services
+  </h1>
+  {
+    sections.map((section, index) => (
+      <Service
+        key={index}
+        title={section.title}
+        image={section.image}
+        technologies={section.technologies}
+      />
+    ))
+  }
+</section>

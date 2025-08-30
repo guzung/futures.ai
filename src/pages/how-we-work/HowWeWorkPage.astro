@@ -8,6 +8,8 @@ import Step1 from "../../assets/how-we-work/steps/step-1.svg";
 import Step2 from "../../assets/how-we-work/steps/step-2.svg";
 import Step3 from "../../assets/how-we-work/steps/step-3.svg";
 import Step4 from "../../assets/how-we-work/steps/step-4.svg";
+import Perk1 from "../../assets/how-we-work/perks/perk-1.svg";
+import Perk2 from "../../assets/how-we-work/perks/perk-2.svg";
 
 const workflowSteps = [
   {
@@ -39,10 +41,27 @@ const workflowSteps = [
       "We don't stop at launch. We monitor, refine, and grow your product to match evolving user needs and business goals.",
   },
 ];
+
+const perksData = [
+  {
+    id: 1,
+    icon: Perk1.src,
+    title: "Grows",
+    description: "With digital marketing sales grows with",
+    percentage: "150%",
+  },
+  {
+    id: 2,
+    icon: Perk2.src,
+    title: "Optimisation",
+    description: "AI business optimisation efficiency",
+    percentage: "300%",
+  },
+];
 ---
 
 <section
-  class="flex flex-col items-center justify-center relative bg-white w-fit mx-auto"
+  class="flex flex-col items-center gap-[72px] pb-[96px] justify-center relative bg-white w-fit mx-auto"
 >
   <div
     class="inline-flex flex-col items-center justify-center gap-[72px] relative w-[1440px] h-[351px] rounded-2xl overflow-hidden [background:radial-gradient(50%_50%_at_51%_100%,rgba(39,39,42,1)_0%,rgba(0,0,0,1)_100%)]"
@@ -124,5 +143,31 @@ const workflowSteps = [
       alt="Background decoration"
       src={Shine4.src}
     />
+  </div>
+
+  <div class="flex items-start gap-6 relative">
+    {
+      perksData.map((perk, idx) => (
+        <>
+          <div class="flex flex-col w-[300.5px] items-start justify-center gap-0.5 px-6 py-2 relative">
+            <div class="inline-flex items-center gap-3 relative">
+              <img src={perk.icon} alt="logo" class="w-6 h-6 mt-[-10px]" />
+              <h2 class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-zinc-700 text-lg tracking-[-0.32px] leading-8 whitespace-nowrap">
+                {perk.title}
+              </h2>
+            </div>
+            <p class="relative w-[270px] mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-black text-base tracking-[-0.32px] leading-[25.6px]">
+              {perk.description}
+            </p>
+            <span class="w-[49px] relative bg-[linear-gradient(180deg,rgba(54,145,255,1)_0%,rgba(3,30,229,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Inter-Medium',Helvetica] font-medium text-transparent text-lg tracking-[-0.32px] leading-[25.6px] underline">
+              {perk.percentage}
+            </span>
+          </div>
+          {idx < perksData.length - 1 && (
+            <div class="relative self-stretch w-px bg-zinc-200" />
+          )}
+        </>
+      ))
+    }
   </div>
 </section>
