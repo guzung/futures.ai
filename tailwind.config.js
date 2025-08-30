@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+        inter: ["Inter", "Helvetica", "Arial", "sans-serif"],
       },
     },
   },
