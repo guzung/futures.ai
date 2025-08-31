@@ -1,0 +1,85 @@
+---
+const servicesData = [
+  { id: "website-design", label: "Website design" },
+  { id: "ux-design", label: "UX design" },
+  { id: "user-research", label: "User research" },
+  { id: "content-creation", label: "Content creation" },
+  { id: "strategy-consulting", label: "Strategy & consulting" },
+  { id: "other", label: "Other" },
+];
+
+const handleServiceToggle = (id, event) => {
+  // Handle service toggle logic here
+};
+---
+
+<form action="/api/send" method="POST" class="flex flex-col gap-4">
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+    class="p-2 flex items-center gap-4 px-3.5 py-2.5 relative self-stretch w-full flex-none bg-white rounded-md border border-gray-200 shadow-sm"
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    required
+    class="p-2 flex items-center gap-4 px-3.5 py-2.5 relative self-stretch w-full flex-none bg-white rounded-md border border-gray-200 shadow-sm"
+  />
+  <textarea
+    name="message"
+    placeholder="Your Message"
+    required
+    class="p-2 flex items-center gap-4 px-3.5 py-2.5 relative self-stretch w-full flex-none bg-white rounded-md border border-gray-200 shadow-sm"
+  ></textarea>
+  <section class="relative flex flex-col items-start gap-6 py-3">
+    <h2
+      class="relative w-fit -mt-px text-sm font-medium text-gray-600 leading-5 whitespace-nowrap"
+    >
+      Services
+    </h2>
+    <div
+      class="relative self-stretch w-full grid grid-cols-1 md:grid-cols-2 gap-6"
+    >
+      {
+        servicesData.map((service) => (
+          <div class="relative self-stretch w-full flex items-start gap-4">
+            <div class="inline-flex items-center justify-center pt-0.5">
+              <input
+                type="checkbox"
+                id={service.id}
+                class="h-5 w-5 rounded border-gray-300 accent-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer"
+                aria-describedby={`${service.id}-label`}
+              />
+            </div>
+            <div class="relative flex-1 grow flex flex-col items-start gap-1">
+              <label
+                id={`${service.id}-label`}
+                for={service.id}
+                class="cursor-pointer -mt-px text-base leading-6 font-medium text-gray-600"
+              >
+                {service.label}
+              </label>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <div class="relative flex flex-col items-start gap-6">
+    <button
+      type="submit"
+      role="button"
+      aria-label="Get started"
+      class="relative inline-flex items-center justify-center w-full self-stretch gap-2.5 px-[18px] py-3 rounded-md overflow-hidden border-0 cursor-pointer bg-[linear-gradient(180deg,rgba(54,145,255,1)_0%,rgba(3,30,229,1)_100%)] shadow-sm hover:opacity-90 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-150 before:content-[''] before:absolute before:inset-0 before:p-0.5 before:rounded-md before:[background:linear-gradient(180deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none"
+    >
+      <div class="inline-flex items-center justify-center px-1">
+        <span class="font-medium text-white text-base leading-6"
+          >Get started</span
+        >
+      </div>
+    </button>
+  </div>
+</form>

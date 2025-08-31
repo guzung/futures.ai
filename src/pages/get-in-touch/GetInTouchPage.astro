@@ -1,0 +1,37 @@
+---
+import LogoBig from "../../components/navbar/LogoBig.astro";
+import SendForm from "./SendForm.astro";
+---
+
+<section
+  id="get-in-touch"
+  class="inline-flex flex-col w-full items-center gap-[64px] py-[96px] relative bg-white"
+>
+  <div class="flex flex-col gap-[48px] max-w-[480px] w-full mx-auto">
+    <a href="#">
+      <LogoBig />
+    </a>
+    <header class="flex flex-col items-start gap-[24px] relative">
+      <h1
+        class="relative self-stretch -mt-px font-sans font-semibold text-[#181d27] text-[40px] tracking-[-0.02em] leading-[44px]"
+      >
+        Let&apos;s level up your brand, together
+      </h1>
+      <div
+        class="flex items-center gap-2 w-[480px] font-['Inter'] font-normal text-[20px] leading-[30px] text-[#535862] whitespace-nowrap"
+      >
+        <span
+          class="w-[480px] h-[30px] font-['Inter'] font-normal text-[20px] leading-[30px] text-[#535862] flex-none order-1 self-stretch grow-0"
+        >
+          You can reach us anytime via
+          <span
+            class="relative w-fit mt-[6px] bg-[linear-gradient(270deg,rgba(54,145,255,1)_0%,rgba(3,30,229,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] font-sans font-medium text-transparent text-[24px] tracking-[0] leading-[54px] whitespace-nowrap"
+          >
+            hi@futuresai.com
+          </span>
+        </span>
+      </div>
+    </header>
+    <SendForm />
+  </div>
+</section>

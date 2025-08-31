@@ -4,18 +4,22 @@ import arrowWhite from "../assets/footer/arrow-white.svg";
 import logoBig from "../assets/footer/logo-big.svg";
 
 const navigationItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "What we do", href: "#services" },
-  { name: "Our technologies", href: "#technologies" },
-  { name: "Work", href: "#work" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "#" },
+  { name: "About", href: "#about-us" },
+  { name: "What we do", href: "#about-services" },
+  { name: "Our technologies", href: "#our-technologies" },
+  { name: "Work", href: "#services" },
+  { name: "Contact", href: "#get-in-touch" },
 ];
 
 const contactMethods = [
-  { name: "Viber", icon: arrowWhite.src, href: "#viber" },
-  { name: "Telegram", icon: arrowWhite.src, href: "#telegram" },
-  { name: "Email", icon: arrowWhite.src, href: "mailto:contact@futures.ai" },
+  { name: "Viber", icon: arrowWhite.src, href: "tel:+37368118432" },
+  { name: "Telegram", icon: arrowWhite.src, href: "https://t.me/futures_ai" },
+  {
+    name: "Email",
+    icon: arrowWhite.src,
+    href: "#get-in-touch",
+  },
 ];
 ---
 
@@ -40,7 +44,8 @@ const contactMethods = [
           Let's start <br /> creating together
         </h1>
       </div>
-      <button
+      <a
+        href="#get-in-touch"
         class="inline-flex items-center justify-center gap-2 px-8 py-2.5 relative flex-[0_0_auto] rounded-[14px] overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(238,238,238,1)_100%)] hover:opacity-90 transition-opacity cursor-pointer"
         aria-label="Start a conversation with us"
       >
@@ -56,7 +61,7 @@ const contactMethods = [
           </div>
         </div>
         <img class="relative w-4 h-4" alt="Arrow icon" src={arrowBlack.src} />
-      </button>
+      </a>
     </div>
 
     <!-- Footer right -->
@@ -68,23 +73,29 @@ const contactMethods = [
       >
         {
           navigationItems.map((item) => (
-            <div class="relative w-fit font-sans font-medium text-white text-lg tracking-[0] leading-[25.2px] whitespace-nowrap">
+            <a
+              href={item.href}
+              class="relative w-fit font-sans font-medium text-white text-lg tracking-[0] leading-[25.2px] whitespace-nowrap"
+            >
               {item.name}
-            </div>
+            </a>
           ))
         }
       </nav>
       <div class="flex flex-col w-52 items-start gap-3.5 relative">
         {
           contactMethods.map((item) => (
-            <div class="flex flex-col items-start relative self-stretch w-full">
+            <a
+              href={item.href}
+              class="flex flex-col items-start relative self-stretch w-full"
+            >
               <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
                 <div class="relative w-fit mt-[-1.00px] font-sans font-medium text-white text-lg tracking-[0] leading-[25.2px] whitespace-nowrap">
                   {item.name}
                 </div>
                 <img class="relative w-4 h-4" src={item.icon} />
               </div>
-            </div>
+            </a>
           ))
         }
       </div>
