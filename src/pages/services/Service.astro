@@ -3,7 +3,7 @@ const { title, image, technologies = [] } = Astro.props;
 ---
 
 <section
-  class="inline-flex flex-col items-start w-[1320px] gap-8 pt-0 pb-3 px-0 relative border-b [border-bottom-style:solid] border-[#d9d9d9]"
+  class="inline-flex flex-col items-start w-full max-w-[1320px] gap-8 pt-0 pb-3 px-0 relative border-b [border-bottom-style:solid] border-[#d9d9d9]"
 >
   <h1
     class="relative w-fit mt-[-1.00px] font-sans font-medium text-white text-[40px] tracking-[0] leading-[56px] whitespace-nowrap"
@@ -14,7 +14,7 @@ const { title, image, technologies = [] } = Astro.props;
     <figure
       class="inline-flex flex-col items-start gap-2.5 relative flex-[0_0_auto]"
     >
-      <img class="relative w-[1320px] object-cover" src={image} />
+      <img class="relative w-full max-w-[1320px] object-cover" src={image} />
     </figure>
     <div
       class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]"
