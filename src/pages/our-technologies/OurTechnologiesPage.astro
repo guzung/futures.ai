@@ -47,10 +47,11 @@ const technologies = [
 
 <section
   id="our-technologies"
-  class="flex flex-col items-center justify-center gap-2.5 px-[34px] py-24 relative bg-white w-fit mx-auto"
+  class="flex flex-col items-center justify-center gap-2.5 px-[20px] md:px-[34px] py-24 relative bg-white w-full"
 >
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+  <di class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[12px]">
     <TitleBlock />
+    <div class="hidden md:block xl:hidden"></div>
     {
       technologies.map((tech) => (
         <TechItem
@@ -61,5 +62,5 @@ const technologies = [
       ))
     }
     <LastItem />
-  </div>
+  </di>
 </section>
