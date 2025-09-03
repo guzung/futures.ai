@@ -11,24 +11,24 @@ const contentData = {
 ---
 
 <section
-  class="flex items-center justify-center px-[30px] py-24 relative bg-white"
+  class="flex items-center justify-center px-[21px] pt-[12px] pb-[96px] lg:px-[46px] lg:py-[96px] xl:px-[30px] relative bg-white"
   role="main"
   aria-labelledby="why-us-heading"
 >
-  <div class="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
+  <div class="grid grid-cols-1 xl:grid-cols-2 gap-[30px] w-full">
     <div
-      class="justify-center px-4 py-[22px] bg-[#f1f7ff] rounded-[31px] inline-flex items-center relative flex-[0_0_auto]"
+      class="w-full col-span-1 px-4 py-[22px] bg-[#f1f7ff] rounded-[31px] flex items-center relative overflow-hidden"
     >
       <div
-        class="h-[486px] gap-2.5 px-[180px] py-[216px] inline-flex items-center relative flex-[0_0_auto]"
+        class="w-full h-auto md:h-[486px] gap-2.5 py-8 md:py-[216px] flex items-center relative"
       >
         <div
-          class="relative w-full max-w-[900px] xl:max-w-[500px] 2xl:max-w-[661px] h-[486px] -top-px left-0 font-sans font-medium text-black text-[38px] xl:text-[28px] 2xl:text-[38px] tracking-[0] leading-[54px] whitespace-normal break-words overflow-hidden"
+          class="relative w-full max-w-full md:max-w-[600px] xl:max-w-[500px] 2xl:max-w-[661px] xl:h-[486px] font-sans font-medium text-black text-[28px] sm:text-[32px] xl:text-[28px] 2xl:text-[38px] tracking-[0] leading-[1.4] md:leading-[54px] whitespace-normal break-words"
         >
           {contentData.mainText}
           <span
             id="why-us-heading"
-            class="relative w-fit mt-1.5 bg-gradient-to-l from-[#3691ff] to-[#031ee5] bg-clip-text text-transparent font-sans font-medium text-[38px] xl:text-[28px] 2xl:text-[38px] leading-[54px] whitespace-nowrap"
+            class="relative w-fit mt-1.5 bg-gradient-to-l from-[#3691ff] to-[#031ee5] bg-clip-text text-transparent font-sans font-medium sm:text-[32px] xl:text-[28px] 2xl:text-[38px] leading-[1.4] md:leading-[54px] whitespace-nowrap"
           >
             {contentData.highlightText}
           </span>
@@ -38,7 +38,7 @@ const contentData = {
     </div>
     <div>
       <img
-        class="relative sm:w-[932px] h-[638px] aspect-[1] object-cover"
+        class="relative w-full h-auto object-cover"
         alt="Professional team members showcasing our collaborative approach and expertise"
         src={WhyUsImage.src}
         loading="lazy"

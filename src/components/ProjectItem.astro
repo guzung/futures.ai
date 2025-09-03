@@ -2,9 +2,7 @@
 const { title, description, image } = Astro.props;
 ---
 
-<div
-  class="relative w-full h-[509px] rounded-[24px] bg-[#ebebeb] overflow-hidden"
->
+<div class="relative w-full h-auto rounded-[24px] bg-[#ebebeb] overflow-hidden">
   <img
     src={image}
     alt={`${title} preview`}

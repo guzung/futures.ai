@@ -61,12 +61,12 @@ const portfolioItems = [
 ];
 ---
 
-<main
-  class="flex flex-wrap w-full items-center justify-center gap-[40px] relative"
+<section
+  class="flex flex-wrap w-full items-center gap-[27px] justify-center relative"
 >
   {
     portfolioItems.map((item) => (
-      <article class="flex flex-col w-full max-w-[620px] items-start gap-[23px] relative">
+      <article class="flex flex-col w-full md:w-1/2 md:w-[calc(50%-20px)] items-start md:gap-[15px] lg:gap-[23px] relative">
         <ProjectItem
           title={item.category}
           description={item.title}
@@ -75,4 +75,4 @@ const portfolioItems = [
       </article>
     ))
   }
-</main>
+</section>

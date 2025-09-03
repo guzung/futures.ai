@@ -12,16 +12,14 @@ const mainText = {
 
 <section
   id="about-us"
-  class="flex flex-col items-center justify-center gap-2.5 px-[34px] py-24 relative bg-white w-fit mx-auto"
+  class="flex flex-col items-center justify-center gap-[10px] md:px-[32px] lg:px-[34px] py-[96px] relative bg-white w-fit mx-auto"
 >
   <div
-    class="flex items-center gap-[27px] px-[22px] py-6 self-stretch w-full bg-[#f2f8ff] rounded-[32px] relative flex-[0_0_auto]"
+    class="grid grid-cols-1 lg:grid-cols-2 gap-[29px] lg:gap-[27px] px-[12px] py-[24px] md:p-[24px] self-stretch w-full bg-[#f2f8ff] rounded-[32px] relative"
   >
-    <div
-      class="inline-flex flex-col items-start gap-8 rounded-[32px] relative flex-[0_0_auto]"
-    >
+    <div class="inline-flex flex-col items-start gap-8 rounded-[32px] relative">
       <p
-        class="relative w-[661px] mt-[-1.00px] font-sans font-medium text-transparent text-[38px] tracking-[0] leading-[38px]"
+        class="relative mt-[-1.00px] font-sans font-medium text-transparent text-[20px] md:text-[38px] tracking-[0] leading-[27px] md:leading-[38px]"
       >
         <span class="text-black"> {mainText.primary} </span>
         <br />
@@ -32,11 +30,9 @@ const mainText = {
         </span>
       </p>
 
-      <div
-        class="inline-flex items-center justify-center relative flex-[0_0_auto]"
-      >
+      <div class="inline-flex items-center justify-center relative">
         <h2
-          class="relative w-fit mt-[-1.00px] bg-[linear-gradient(267deg,rgba(54,145,255,1)_0%,rgba(3,30,229,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Manrope-Medium',Helvetica] font-medium text-transparent text-[38px] tracking-[0] leading-[47.9px] whitespace-nowrap"
+          class="relative w-fit -mt-px bg-gradient-to-l from-[#3691ff] to-[#031ee5] bg-clip-text text-transparent font-sans font-medium text-[20px] md:text-[38px] leading-[27px] md:leading-[38px] whitespace-nowrap"
         >
           {mainText.callToAction}
         </h2>
@@ -44,7 +40,7 @@ const mainText = {
     </div>
 
     <img
-      class="relative w-[640px] h-[638px] aspect-[1] object-cover"
+      class="relative w-full h-full lg:max-h-[638px] aspect-[1] object-cover"
       alt="Digital security and technology visualization showing a glowing lock icon surrounded by circuit patterns and binary code"
       src={aboutUsImage.src}
     />
