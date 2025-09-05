@@ -21,29 +21,38 @@ const jurisdictionImages = [
 ---
 
 <section
-  class="flex flex-col items-center justify-center gap-2.5 px-[34px] py-24 relative bg-white w-fit mx-auto"
+  class="flex flex-col items-center justify-center gap-[30px] px-[22px] py-[96px] relative bg-white w-full"
 >
   <div
-    class="flex flex-col items-center gap-[90px] px-[339px] py-24 relative self-stretch w-full flex-[0_0_auto] bg-[#eff1f4] rounded-[25px]"
+    class="flex flex-col items-center gap-[30px] md:gap-[90px] px-[0px] md:px-[112px] lg:px-[190px] xl:px-[300px] 2xl:px-[520px] py-[96px] relative self-stretch w-full bg-[#eff1f4] rounded-[25px]"
   >
     <h2
-      class="relative self-stretch font-sans font-medium text-transparent text-[40px] tracking-[0] leading-[56px]"
+      class="relative px-[12px] md:px-[0px] self-stretch font-sans font-medium text-transparent text-[20px] md:text-[34px] lg:text-[40px] tracking-[0] leading-[43px] md:leading-[60px]"
     >
-      <span class="text-black">
+      <span class="font-sans font-medium text-black">
         We work in leading jurisdictions <br />
       </span>
-      <span class="inline-flex items-center gap-2">
-        <span class="text-[#666666]">EU, USA, Asia-Pacific region</span>
+      <div class="grid grid-cols-1 gap-2">
+        <span
+          class="text-[#666666] md:inline-flex md:items-center md:gap-4 whitespace-nowrap"
+        >
+          EU, USA, Asia-Pacific region
+          <img
+            class="h-[45px] w-auto hidden md:inline-block"
+            alt="Flags: EU, USA, Asia-Pacific"
+            src={flags.src}
+          />
+        </span>
         <img
-          class="h-[1em] w-auto align-middle"
+          class="h-[45px] w-auto align-middle mx-auto block md:hidden"
           alt="Flags: EU, USA, Asia-Pacific"
           src={flags.src}
         />
-      </span>
+      </div>
     </h2>
 
     <div
-      class="relative inline-flex items-center"
+      class="flex flex-col md:flex-row md:justify-center w-[180px] md:w-auto items-center relative"
       role="img"
       aria-label="Jurisdiction representations"
     >
