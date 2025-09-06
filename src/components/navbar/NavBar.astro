@@ -3,6 +3,12 @@ import Logo from "./Logo.astro";
 import MenuMobile from "./NavBarMobile.astro";
 import Navigation from "./Navigation.astro";
 import ReachOut from "./ReachOut.astro";
+
+const navigationItems = [
+  { label: "About Us", href: "#about-us" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "Services", href: "#services" },
+];
 ---
 
 <nav
@@ -15,8 +21,8 @@ import ReachOut from "./ReachOut.astro";
     bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(250,250,250,1)_100%)] hover:opacity-90 transition-opacity"
   >
     <Logo />
-    <Navigation />
+    <Navigation navigationItems={navigationItems} />
     <ReachOut />
   </header>
-  <MenuMobile />
+  <MenuMobile navigationItems={navigationItems} />
 </nav>

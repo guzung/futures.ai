@@ -1,22 +1,63 @@
 ---
 import menuMobile from "../../assets/navbar/menu-mobile.svg";
 import Logo from "./Logo.astro";
+
+const { navigationItems } = Astro.props;
 ---
 
 <div
-  class="md:hidden flex items-center justify-between w-full p-1 relative bg-[#ffffff1a] rounded-xl border border-solid border-[#0000000f]"
+  class="md:hidden flex flex-col w-full relative bg-[#ffffff1a] rounded-xl border border-solid border-[#0000000f]"
 >
-  <Logo />
-  <button
-    class="flex-col items-start relative flex-[0_0_auto] bg-[#13151a] rounded-lg overflow-hidden border border-solid border-[#26282c] cursor-pointer"
-    aria-label="Toggle menu"
-    type="button"
+  <div class="flex items-center justify-between w-full p-1">
+    <Logo />
+    <button
+      id="mobile-menu-toggle"
+      class="flex-col items-start relative flex-[0_0_auto] bg-[#13151a] rounded-lg overflow-hidden border border-solid border-[#26282c] cursor-pointer"
+      aria-label="Toggle menu"
+      type="button"
+      aria-expanded="false"
+    >
+      <img
+        class="w-full h-full"
+        alt=""
+        src={menuMobile.src}
+        role="presentation"
+      />
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden w-full mt-2 p-3 bg-white rounded-lg shadow-md transition-all duration-300 ease-in-out"
   >
-    <img
-      class="w-full h-full"
-      alt=""
-      src={menuMobile.src}
-      role="presentation"
-    />
-  </button>
+    <nav class="flex flex-col space-y-3">
+      {
+        navigationItems.map((item) => (
+          <a
+            href={item.href}
+            class="py-2 px-3 text-gray-800 hover:bg-gray-100 hover:text-blue-600 rounded-lg transition-colors"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("mobile-menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (toggleButton && mobileMenu) {
+      toggleButton.addEventListener("click", () => {
+        const isExpanded =
+          toggleButton.getAttribute("aria-expanded") === "true";
+        toggleButton.setAttribute("aria-expanded", (!isExpanded).toString());
+
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+  });
+</script>
