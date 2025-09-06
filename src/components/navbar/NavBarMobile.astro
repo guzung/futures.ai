@@ -7,7 +7,7 @@ const { navigationItems } = Astro.props;
 ---
 
 <div
-  class="md:hidden flex flex-col w-full relative bg-[#ffffff1a] rounded-xl border border-solid border-[#0000000f]"
+  class="md:hidden flex flex-col w-full relative bg-[#ffffff1a] rounded-xl border border-solid border-[#0000000f] bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(250,250,250,1)_100%)] hover:opacity-90 transition-opacity"
 >
   <div class="flex items-center justify-between w-full p-1">
     <Logo />
@@ -32,7 +32,7 @@ const { navigationItems } = Astro.props;
 
   <div
     id="mobile-menu"
-    class="hidden w-full mt-2 p-3 bg-white rounded-lg shadow-md transition-all duration-300 ease-in-out"
+    class="hidden w-full mt-2 p-3 bg-white rounded-lg shadow-md transition-all duration-300 ease-in-out bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(250,250,250,1)_100%)] hover:opacity-90 transition-opacity"
   >
     <nav class="flex flex-col space-y-3">
       {
