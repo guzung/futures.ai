@@ -1,0 +1,85 @@
+---
+import arrowBlack from "../../assets/footer/arrow-black.svg";
+import logoBig from "../../assets/footer/logo-big.svg";
+
+const { navigationItems, contactMethods } = Astro.props;
+---
+
+<section
+  class="md:hidden flex flex-col w-full items-center px-[22px] py-24 relative bg-[#0f0f0f]"
+>
+  <div class="gap-[14.9px] pb-[30px]">
+    <div class="w-full">
+      <h2
+        class="text-[13px] leading-[14.4px] relative w-fit font-sans font-medium text-white tracking-[0] whitespace-nowrap"
+      >
+        Contact
+      </h2>
+    </div>
+    <div class="w-full">
+      <h1
+        class="whitespace-nowrap relative font-sans font-medium text-white text-[40px] tracking-[0] leading-[48.3px]"
+      >
+        Let's start <br /> creating together
+      </h1>
+    </div>
+  </div>
+
+  <div class="w-full">
+    <a
+      href="#get-in-touch"
+      class="inline-flex items-center justify-center gap-2 px-[20.13px] py-[6.29px] relative rounded-[8.81px] overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(238,238,238,1)_100%)] hover:opacity-90 transition-opacity cursor-pointer"
+      aria-label="Start a conversation with us"
+    >
+      <div class="inline-flex flex-col items-start relative">
+        <div class="flex flex-col items-start relative self-stretch w-full">
+          <span
+            class="relative w-fit mt-[-1.00px] font-sans font-semibold text-[#0f0f0f] text-[11.32px] tracking-[0] leading-[15.9px] whitespace-nowrap"
+          >
+            Let's talk
+          </span>
+        </div>
+      </div>
+      <img class="relative w-4 h-4" alt="Arrow icon" src={arrowBlack.src} />
+    </a>
+  </div>
+
+  <div class="flex w-full items-start pt-[19.52px] relative">
+    <nav
+      class="flex flex-col items-start gap-[22.36px] relative"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      {
+        navigationItems.map((item) => (
+          <a
+            href={item.href}
+            class="relative w-full font-sans font-medium text-white text-[25.15px] tracking-[0] leading-[35.2px] whitespace-nowrap"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+
+  <div
+    class="flex flex-col w-full items-stretch pt-[90px] gap-[22.28px] relative"
+  >
+    {
+      contactMethods.map((item) => (
+        <a href={item.href} class="inline-flex w-full relative">
+          <div class="flex w-[calc(100%-30px)] mt-[-1.00px] font-sans font-medium text-white text-[28.64px] tracking-[0] leading-[40px] whitespace-nowrap">
+            {item.name}
+          </div>
+          <img class="flex w-[25px] items-end" src={item.icon} />
+        </a>
+      ))
+    }
+  </div>
+  <img
+    class="relative pt-[19.52px] w-full h-full"
+    alt="Futures.ai logo"
+    src={logoBig.src}
+  />
+</section>

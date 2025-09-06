@@ -5,23 +5,25 @@ import SendForm from "./SendForm.astro";
 
 <section
   id="get-in-touch"
-  class="inline-flex flex-col w-full items-center gap-[64px] py-[96px] relative bg-white"
+  class="inline-flex flex-col w-full items-center py-[96px] relative bg-white"
 >
-  <div class="flex flex-col gap-[48px] max-w-[480px] w-full mx-auto">
-    <a href="#">
-      <LogoBig />
+  <div
+    class="flex flex-col gap-[48px] md:gap-[64px] px-[16px] w-full mx-auto items-center"
+  >
+    <a href="#" class="inline-block mx-auto">
+      <LogoBig width="141px" />
     </a>
-    <header class="flex flex-col items-start gap-[24px] relative">
+    <header
+      class="flex flex-col items-start gap-[24px] relative w-full md:w-[50%]"
+    >
       <h1
-        class="relative self-stretch -mt-px font-sans font-semibold text-[#181d27] text-[40px] tracking-[-0.02em] leading-[44px]"
+        class="relative w-full font-sans font-semibold text-[#181d27] text-[40px] tracking-[-0.02em] leading-[44px] break-words"
       >
         Let&apos;s level up your brand, together
       </h1>
-      <div
-        class="flex items-center gap-2 w-[480px] font-['Inter'] font-normal text-[20px] leading-[30px] text-[#535862] whitespace-nowrap"
-      >
+      <div class="flex items-center gap-2 w-full">
         <span
-          class="w-[480px] h-[30px] font-['Inter'] font-normal text-[20px] leading-[30px] text-[#535862] flex-none order-1 self-stretch grow-0"
+          class="w-full h-[30px] font-inter font-normal text-[20px] md:leading-[30px] text-[#535862] flex-none order-1 self-stretch grow-0"
         >
           You can reach us anytime via
           <span

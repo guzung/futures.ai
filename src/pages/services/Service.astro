@@ -1,36 +1,34 @@
 ---
-const { title, image, technologies = [] } = Astro.props;
+const { title, image, imageMobile, technologies = [] } = Astro.props;
 ---
 
 <section
-  class="inline-flex flex-col items-start w-full max-w-[1320px] gap-8 pt-0 pb-3 px-0 relative border-b [border-bottom-style:solid] border-[#d9d9d9]"
+  class="inline-flex flex-col items-start w-full gap-8 pt-0 pb-3 px-0 relative border-b [border-bottom-style:solid] border-[#d9d9d9]"
 >
   <h1
-    class="relative w-fit mt-[-1.00px] font-sans font-medium text-white text-[40px] tracking-[0] leading-[56px] whitespace-nowrap"
+    class="relative w-fit mt-[-1.00px] font-sans font-medium text-white text-[32px] md:text-[40px] tracking-[0] leading-[46px] md:leading-[56px]"
   >
     {title}
   </h1>
-  <div class="inline-flex flex-col items-start gap-8 relative flex-[0_0_auto]">
-    <figure
-      class="inline-flex flex-col items-start gap-2.5 relative flex-[0_0_auto]"
-    >
-      <img class="relative w-full max-w-[1320px] object-cover" src={image} />
-    </figure>
-    <div
-      class="inline-flex flex-col items-start gap-1 relative flex-[0_0_auto]"
-    >
+  <div class="inline-flex flex-col items-start gap-8 relative">
+    <picture class="w-full h-auto">
+      <source srcset={image} media="(min-width: 1024px)" type="image/svg+xml" />
+      <source srcset={image} media="(min-width: 768px)" type="image/svg+xml" />
+      <img src={imageMobile} />
+    </picture>
+    <div class="inline-flex flex-col items-start gap-1 relative">
       <div
-        class="flex flex-wrap items-start gap-[7px_4px] self-stretch w-full relative flex-[0_0_auto]"
+        class="flex flex-wrap items-start gap-[7px_4px] self-stretch w-full relative"
         role="list"
         aria-label="Development technologies"
       >
         {
           technologies.map((tech) => (
             <div
-              class="inline-flex items-center justify-center gap-2.5 px-2 py-1.5 relative flex-[0_0_auto] rounded-[999px] border border-solid border-[#ffffff69]"
+              class="inline-flex items-center justify-center gap-2.5 px-[8px] py-[6px] md:px-2 mdpy-1.5 relative  rounded-[999px] border border-solid border-[#ffffff69]"
               role="listitem"
             >
-              <span class="relative w-fit mt-[-1.00px] [font-family:'Manrope-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-[22.0px] whitespace-nowrap">
+              <span class="relative w-fit mt-[-1.00px] font-sans font-medium text-white text-[16px] md:text-sm tracking-[0] leading-[22.0px] whitespace-nowrap">
                 {tech}
               </span>
             </div>

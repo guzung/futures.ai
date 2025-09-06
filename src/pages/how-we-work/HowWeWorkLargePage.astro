@@ -1,0 +1,173 @@
+---
+import tileBG from "../../assets/how-we-work/tile-bg.svg";
+import Shine1 from "../../assets/how-we-work/shine-1.svg";
+import Shine2 from "../../assets/how-we-work/shine-2.svg";
+import Shine3 from "../../assets/how-we-work/shine-3.svg";
+import Shine4 from "../../assets/how-we-work/shine-4.svg";
+import Step1 from "../../assets/how-we-work/steps/step-1.svg";
+import Step2 from "../../assets/how-we-work/steps/step-2.svg";
+import Step3 from "../../assets/how-we-work/steps/step-3.svg";
+import Step4 from "../../assets/how-we-work/steps/step-4.svg";
+import Perk1 from "../../assets/how-we-work/perks/perk-1.svg";
+import Perk2 from "../../assets/how-we-work/perks/perk-2.svg";
+
+const workflowSteps = [
+  {
+    id: 1,
+    icon: Step1.src,
+    title: "Discovery",
+    description:
+      "We start by understanding your vision, goals, and users. Every great product begins with a clear purpose.",
+  },
+  {
+    id: 2,
+    icon: Step2.src,
+    title: "Strategy & Design",
+    description:
+      "We craft smart, intuitive interfaces with scalable architecture, built to convert and engage.",
+  },
+  {
+    id: 3,
+    icon: Step3.src,
+    title: "Build & Integrate",
+    description:
+      "Using cutting-edge technologies from AI to blockchain, we develop fast, secure, and flexible digital products.",
+  },
+  {
+    id: 4,
+    icon: Step4.src,
+    title: "Launch & Scale",
+    description:
+      "We don't stop at launch. We monitor, refine, and grow your product to match evolving user needs and business goals.",
+  },
+];
+
+const perksData = [
+  {
+    id: 1,
+    icon: Perk1.src,
+    title: "Grows",
+    description: "With digital marketing sales grows with",
+    percentage: "150%",
+  },
+  {
+    id: 2,
+    icon: Perk2.src,
+    title: "Optimisation",
+    description: "AI business optimisation efficiency",
+    percentage: "300%",
+  },
+];
+---
+
+<section
+  class="hidden md:flex flex-col items-center gap-[72px] pb-[96px] justify-center relative bg-white w-full mx-auto"
+>
+  <div
+    class="inline-flex flex-col items-center justify-center gap-[72px] relative w-full h-[351px] rounded-2xl overflow-hidden [background:radial-gradient(50%_50%_at_51%_100%,rgba(39,39,42,1)_0%,rgba(0,0,0,1)_100%)]"
+  >
+    <div
+      class="absolute w-[1440px] h-[351px] top-0 left-0 mix-blend-lighten opacity-[0.04] [background-size:100%_100%] bg-no-repeat"
+      style={`background-image: url(${tileBG.src});`}
+    >
+    </div>
+
+    <header
+      class="inline-flex flex-col items-start justify-center gap-3 pl-0 pr-[368.58px] py-0 relative flex-[0_0_auto]"
+    >
+      <div class="inline-flex flex-col items-start relative flex-[0_0_auto]">
+        <div
+          class="items-center flex flex-col relative self-stretch w-full flex-[0_0_auto]"
+        >
+          <p
+            class="relative w-fit mt-[-1.00px] font-sans font-medium text-zinc-300 text-sm text-center tracking-[0] leading-[18px] whitespace-nowrap"
+          >
+            How We Work
+          </p>
+        </div>
+      </div>
+      <div class="inline-flex flex-col items-start relative flex-[0_0_auto]">
+        <div
+          class="items-start flex flex-col relative self-stretch w-full flex-[0_0_auto]"
+        >
+          <h1
+            class="relative w-fit mt-[-1.00px] font-sans font-medium text-white text-[28px] tracking-[-0.56px] leading-9 whitespace-nowrap"
+          >
+            Let's explain step-by-step
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <div
+      class="inline-flex items-start justify-center gap-8 relative flex-[0_0_auto]"
+    >
+      {
+        workflowSteps.map((step) => (
+          <article class="relative self-stretch w-[213px] overflow-hidden">
+            <div class="w-[213px] flex flex-col items-start relative top-1.5">
+              <div class="inline-flex items-center gap-3 relative flex-[0_0_auto]">
+                <img src={step.icon} alt="logo" class="mt-[-8px]" />
+                <h2 class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[-0.32px] leading-[25.6px] whitespace-nowrap">
+                  {step.title}
+                </h2>
+              </div>
+              <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+                <p class="relative self-stretch h-[70px] mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-zinc-400 text-sm tracking-[-0.32px] leading-[18px]">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <img
+      class="absolute w-[589px] h-[351px] top-0 left-[851px] aspect-[1.23] object-cover"
+      alt="Background decoration"
+      src={Shine1.src}
+    />
+    <img
+      class="w-[373px] left-0 absolute h-[351px] top-0 aspect-[1.23] object-cover"
+      alt="Background decoration"
+      src={Shine2.src}
+    />
+    <img
+      class="w-[424px] left-[1016px] absolute h-[351px] top-0 aspect-[1.23] object-cover"
+      alt="Background decoration"
+      src={Shine3.src}
+    />
+    <img
+      class="w-[570px] left-0 absolute h-[351px] top-0 aspect-[1.23] object-cover"
+      alt="Background decoration"
+      src={Shine4.src}
+    />
+  </div>
+
+  <div class="flex items-start gap-6 relative">
+    {
+      perksData.map((perk, idx) => (
+        <>
+          <div class="flex flex-col w-[300.5px] items-start justify-center gap-0.5 px-6 py-2 relative">
+            <div class="inline-flex items-center gap-3 relative">
+              <img src={perk.icon} alt="logo" class="w-6 h-6 mt-[-10px]" />
+              <h2 class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-zinc-700 text-lg tracking-[-0.32px] leading-8 whitespace-nowrap">
+                {perk.title}
+              </h2>
+            </div>
+            <p class="relative w-[270px] mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-black text-base tracking-[-0.32px] leading-[25.6px]">
+              {perk.description}
+            </p>
+            <span class="w-[49px] relative bg-[linear-gradient(180deg,rgba(54,145,255,1)_0%,rgba(3,30,229,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Inter-Medium',Helvetica] font-medium text-transparent text-lg tracking-[-0.32px] leading-[25.6px] underline">
+              {perk.percentage}
+            </span>
+          </div>
+          {idx < perksData.length - 1 && (
+            <div class="relative self-stretch w-px bg-zinc-200" />
+          )}
+        </>
+      ))
+    }
+  </div>
+</section>

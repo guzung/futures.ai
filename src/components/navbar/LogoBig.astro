@@ -1,7 +1,8 @@
 ---
 import logoBig from "../../assets/logo-big.svg";
+const { width = "134px" } = Astro.props;
 ---
 
-<picture class="w-[134px] h-auto lg:w-[242px]">
+<picture class=`w-[${width}] h-auto lg:w-[242px]`>
   <img src={logoBig.src} alt="logo" />
 </picture>

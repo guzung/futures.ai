@@ -1,7 +1,7 @@
 ---
-import arrowBlack from "../assets/footer/arrow-black.svg";
 import arrowWhite from "../assets/footer/arrow-white.svg";
-import logoBig from "../assets/footer/logo-big.svg";
+import FooterLarge from "./footer/FooterLarge.astro";
+import FooterMobile from "./footer/FooterMobile.astro";
 
 const navigationItems = [
   { name: "Home", href: "#" },
@@ -23,87 +23,14 @@ const contactMethods = [
 ];
 ---
 
-<footer
-  id="footer"
-  class="inline-flex flex-col w-full items-center gap-[114px] px-[89px] py-[96px] relative bg-[#0f0f0f]"
->
-  <div class="inline-flex items-center gap-[184px] relative">
-    <!-- Footer left -->
-    <div
-      class="flex flex-col max-w-[550px] w-[550px] items-start justify-center gap-[64px] relative"
-    >
-      <div class="gap-[22.9px]">
-        <h2
-          class="text-[22px] leading-[22.4px] relative w-fit mt-[-1.00px] font-sans font-medium text-white tracking-[0] whitespace-nowrap"
-        >
-          Contact
-        </h2>
-        <h1
-          class="relative self-stretch mt-[-1.00px] font-sans font-medium text-white text-[64px] tracking-[0] leading-[76.8px]"
-        >
-          Let's start <br /> creating together
-        </h1>
-      </div>
-      <a
-        href="#get-in-touch"
-        class="inline-flex items-center justify-center gap-2 px-8 py-2.5 relative flex-[0_0_auto] rounded-[14px] overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(238,238,238,1)_100%)] hover:opacity-90 transition-opacity cursor-pointer"
-        aria-label="Start a conversation with us"
-      >
-        <div class="inline-flex flex-col items-start relative flex-[0_0_auto]">
-          <div
-            class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]"
-          >
-            <span
-              class="relative w-fit mt-[-1.00px] font-sans font-semibold text-[#0f0f0f] text-lg tracking-[0] leading-[25.2px] whitespace-nowrap"
-            >
-              Let's talk
-            </span>
-          </div>
-        </div>
-        <img class="relative w-4 h-4" alt="Arrow icon" src={arrowBlack.src} />
-      </a>
-    </div>
+<footer id="footer" class="w-full bg-[#0f0f0f]">
+  <FooterLarge
+    navigationItems={navigationItems}
+    contactMethods={contactMethods}
+  />
 
-    <!-- Footer right -->
-    <div class="flex max-w-[440px] w-[440px] items-start gap-[22px] relative">
-      <nav
-        class="flex flex-col items-start gap-4 relative flex-1 grow"
-        role="navigation"
-        aria-label="Main navigation"
-      >
-        {
-          navigationItems.map((item) => (
-            <a
-              href={item.href}
-              class="relative w-fit font-sans font-medium text-white text-lg tracking-[0] leading-[25.2px] whitespace-nowrap"
-            >
-              {item.name}
-            </a>
-          ))
-        }
-      </nav>
-      <div class="flex flex-col w-52 items-start gap-3.5 relative">
-        {
-          contactMethods.map((item) => (
-            <a
-              href={item.href}
-              class="flex flex-col items-start relative self-stretch w-full"
-            >
-              <div class="inline-flex items-center justify-center gap-2 relative flex-[0_0_auto]">
-                <div class="relative w-fit mt-[-1.00px] font-sans font-medium text-white text-lg tracking-[0] leading-[25.2px] whitespace-nowrap">
-                  {item.name}
-                </div>
-                <img class="relative w-4 h-4" src={item.icon} />
-              </div>
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </div>
-  <img
-    class="relative w-full max-w-[1262px] h-[268.16px] mt-[-4.23px] mb-[-4.23px] ml-0"
-    alt="Futures.ai logo"
-    src={logoBig.src}
+  <FooterMobile
+    navigationItems={navigationItems}
+    contactMethods={contactMethods}
   />
 </footer>

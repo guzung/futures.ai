@@ -1,14 +1,19 @@
 ---
 import service1 from "../../assets/services/service-1.svg";
+import service1mb from "../../assets/services/service-1-mobile.svg";
 import service2 from "../../assets/services/service-2.svg";
+import service2mb from "../../assets/services/service-2-mobile.svg";
 import service3 from "../../assets/services/service-3.svg";
+import service3mb from "../../assets/services/service-3-mobile.svg";
 import service4 from "../../assets/services/service-4.svg";
+import service4mb from "../../assets/services/service-4-mobile.svg";
 import Service from "./Service.astro";
 
 const sections = [
   {
     title: "Development",
     image: service1.src,
+    imageMobile: service1mb.src,
     technologies: [
       "Webflow",
       "Framer",
@@ -26,6 +31,7 @@ const sections = [
   {
     title: "UI/UX & Graphic Design",
     image: service2.src,
+    imageMobile: service2mb.src,
     technologies: [
       "Figma",
       "Illustrator",
@@ -39,6 +45,7 @@ const sections = [
   {
     title: "Digital Marketing",
     image: service3.src,
+    imageMobile: service3mb.src,
     technologies: [
       "Notion",
       "Buffer",
@@ -63,6 +70,7 @@ const sections = [
   {
     title: "AI Integration & Consulting",
     image: service4.src,
+    imageMobile: service4mb.src,
     technologies: [
       "OpenAI",
       "Mistral",
@@ -80,10 +88,10 @@ const sections = [
 
 <section
   id="services"
-  class="flex flex-col w-full justify-center items-center gap-8 px-[60px] py-[96px] relative bg-black"
+  class="flex flex-col w-full justify-center items-center gap-[32px] md:gap-8 px-[21px] md:px-[60px] py-[96px] relative bg-black"
 >
   <h1
-    class="relative w-[1320px] mt-[-1.00px] font-sans font-medium text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap"
+    class="relative w-full mt-[-1.00px] font-sans font-medium text-white text-base tracking-[0] leading-[22.4px] whitespace-nowrap"
   >
     Services
   </h1>
@@ -93,6 +101,7 @@ const sections = [
         key={index}
         title={section.title}
         image={section.image}
+        imageMobile={section.imageMobile}
         technologies={section.technologies}
       />
     ))

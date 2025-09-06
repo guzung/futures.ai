@@ -13,28 +13,32 @@ const handleServiceToggle = (id, event) => {
 };
 ---
 
-<form action="/api/send" method="POST" class="flex flex-col gap-4">
+<form
+  action="/api/send"
+  method="POST"
+  class="flex flex-col gap-4 pt-[40px] md:pt-[64px] w-full md:w-[50%]"
+>
   <input
     type="text"
     name="name"
     placeholder="Your Name"
     required
-    class="p-2 flex items-center gap-4 px-3.5 py-2.5 relative self-stretch w-full flex-none bg-white rounded-md border border-gray-200 shadow-sm"
+    class="p-2 flex items-center gap-4 px-3.5 py-2.5 relative w-full min-w-full bg-white rounded-md border border-gray-200 shadow-sm"
   />
   <input
     type="email"
     name="email"
     placeholder="Your Email"
     required
-    class="p-2 flex items-center gap-4 px-3.5 py-2.5 relative self-stretch w-full flex-none bg-white rounded-md border border-gray-200 shadow-sm"
+    class="p-2 flex items-center gap-4 px-3.5 py-2.5 relative w-full min-w-full bg-white rounded-md border border-gray-200 shadow-sm"
   />
   <textarea
     name="message"
     placeholder="Your Message"
     required
-    class="p-2 flex items-center gap-4 px-3.5 py-2.5 relative self-stretch w-full flex-none bg-white rounded-md border border-gray-200 shadow-sm"
+    class="p-2 flex items-center gap-4 px-3.5 py-2.5 relative w-full min-w-full bg-white rounded-md border border-gray-200 shadow-sm"
   ></textarea>
-  <section class="relative flex flex-col items-start gap-6 py-3">
+  <section class="relative hidden md:flex flex-col items-start gap-6 py-3">
     <h2
       class="relative w-fit -mt-px text-sm font-medium text-gray-600 leading-5 whitespace-nowrap"
     >

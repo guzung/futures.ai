@@ -1,13 +1,14 @@
 ---
 import integrationsImg from "../../assets/integrations.svg";
+import integrationsMobileImg from "../../assets/integrations-mobile.svg";
 ---
 
 <section
   id="integrations"
-  class="flex flex-col items-center justify-center gap-2.5 px-[34px] py-[96px] relative bg-white w-fit mx-auto"
+  class="flex flex-col items-center justify-center gap-2.5 px-[10px] md:px-[34px] pt-[96px] relative bg-white w-fit mx-auto"
 >
   <div
-    class="flex flex-col items-center gap-[var(--3-spacing-spacing-2xl)] relative w-full flex-[0_0_auto] max-w-screen-xl"
+    class="flex flex-col items-center gap-[var(--3-spacing-spacing-2xl)] relative w-full max-w-screen-xl"
   >
     <h2
       class="relative self-stretch mt-[-1.00px] bg-[linear-gradient(180deg,rgba(54,145,255,1)_0%,rgba(3,30,229,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] font-text-md-semibold font-[number:var(--text-md-semibold-font-weight)] text-transparent text-[length:var(--text-md-semibold-font-size)] text-center tracking-[var(--text-md-semibold-letter-spacing)] leading-[var(--text-md-semibold-line-height)] [font-style:var(--text-md-semibold-font-style)]"
@@ -25,9 +26,12 @@ import integrationsImg from "../../assets/integrations.svg";
       We leverage modern technologies and trusted partnerships
     </p>
   </div>
-  <img
-    class="relative w-full max-w-[1342px] h-auto aspect-[1.99] object-cover"
-    alt="Integration partners and technologies showcase including Shopify, Next.js, Firebase, React, and other modern web development tools"
-    src={integrationsImg.src}
-  />
+  <picture>
+    <source
+      srcset={integrationsImg.src}
+      media="(min-width: 768px)"
+      type="image/svg+xml"
+    />
+    <img src={integrationsMobileImg.src} alt="logo" />
+  </picture>
 </section>
