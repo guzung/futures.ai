@@ -1,5 +1,6 @@
 ---
 import menuMobile from "../../assets/navbar/menu-mobile.svg";
+import menuOpen from "../../assets/navbar/menu-open.svg";
 import Logo from "./Logo.astro";
 
 const { navigationItems } = Astro.props;
@@ -18,9 +19,12 @@ const { navigationItems } = Astro.props;
       aria-expanded="false"
     >
       <img
+        id="menu-icon"
         class="w-full h-full"
         alt=""
         src={menuMobile.src}
+        data-menu-closed={menuMobile.src}
+        data-menu-open={menuOpen.src}
         role="presentation"
       />
     </button>
@@ -35,7 +39,7 @@ const { navigationItems } = Astro.props;
         navigationItems.map((item) => (
           <a
             href={item.href}
-            class="py-2 px-3 text-gray-800 hover:bg-gray-100 hover:text-blue-600 rounded-lg transition-colors"
+            class="py-2 px-3 text-gray-800 hover:bg-gray-100 hover:text-blue-600 rounded-lg transition-colors mobile-menu-link"
           >
             {item.label}
           </a>
@@ -49,14 +53,43 @@ const { navigationItems } = Astro.props;
   document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.getElementById("mobile-menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+    const menuLinks = document.querySelectorAll(".mobile-menu-link");
 
-    if (toggleButton && mobileMenu) {
+    function closeMenu() {
+      if (toggleButton && mobileMenu && menuIcon) {
+        toggleButton.setAttribute("aria-expanded", "false");
+        mobileMenu.classList.add("hidden");
+        (menuIcon as HTMLImageElement).src =
+          menuIcon.getAttribute("data-menu-closed") || "";
+      }
+    }
+
+    function openMenu() {
+      if (toggleButton && mobileMenu && menuIcon) {
+        toggleButton.setAttribute("aria-expanded", "true");
+        mobileMenu.classList.remove("hidden");
+        (menuIcon as HTMLImageElement).src =
+          menuIcon.getAttribute("data-menu-open") || "";
+      }
+    }
+
+    if (toggleButton && mobileMenu && menuIcon) {
       toggleButton.addEventListener("click", () => {
         const isExpanded =
           toggleButton.getAttribute("aria-expanded") === "true";
-        toggleButton.setAttribute("aria-expanded", (!isExpanded).toString());
 
-        mobileMenu.classList.toggle("hidden");
+        if (isExpanded) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          closeMenu();
+        });
       });
     }
   });
