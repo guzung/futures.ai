@@ -7,7 +7,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://guzung.github.io/futures.ai/",
-  base: "/futures.ai",
+  site: "https://future-s.ai",
   integrations: [tailwind(), mdx(), sitemap()],
 });
