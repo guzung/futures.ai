@@ -14,8 +14,7 @@ const handleServiceToggle = (id, event) => {
 ---
 
 <form
-  action="/api/send"
-  method="POST"
+  id="contact-form"
   class="flex flex-col gap-4 pt-[40px] md:pt-[64px] w-full md:w-[50%]"
 >
   <input
@@ -87,3 +86,42 @@ const handleServiceToggle = (id, event) => {
     </button>
   </div>
 </form>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const message = formData.get("message");
+
+        // Construct email body
+        let emailBody = `Name: ${name}\n`;
+        emailBody += `Email: ${email}\n\n`;
+        emailBody += `Message:\n${message}\n`;
+
+        // Create mailto link
+        const subject = encodeURIComponent(
+          "Contact Form Submission from " + name
+        );
+        const body = encodeURIComponent(emailBody);
+        const mailtoLink = `mailto:futures.cont@gmail.com?subject=${subject}&body=${body}`;
+
+        // Try to open email client
+        window.location.href = mailtoLink;
+
+        // Show confirmation message after a brief delay
+        setTimeout(() => {
+          alert(
+            "If your email client did not open, please email us directly at: futures.cont@gmail.com"
+          );
+        }, 1000);
+      });
+    }
+  });
+</script>
